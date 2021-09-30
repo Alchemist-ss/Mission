@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<hr>
+<h2>Поиск по фильмам: </h2>
+<p>
+    <input type="search" name="q" placeholder="Поиск по фильмам">
+    <input type="submit" value="Найти">
+</p>
+
+{% endblock %}

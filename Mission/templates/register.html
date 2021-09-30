@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<!--Это если что для того чтобы выводить быстрые сообщения по типу: "Неправильно!"-->
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<!--End-->
+<form action="/register" method="post" class="form-contact">
+<p><label>Имя: </label><input type="text" name="name" value="" required />
+<p><label>Email: </label><input type="text" name="email" value="" required />
+<p><label>Придумайте пароль: </label> <input type="password" name="psw" value="" required />
+<p><label>Повторите пароль: </label> <input type="password" name="psw2" value="" required />
+<p><input type="submit" value="Регистрация" />
+</form>
+{% endblock %}
